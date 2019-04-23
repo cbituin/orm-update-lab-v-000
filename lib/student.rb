@@ -37,7 +37,7 @@ class Student
       INSERT INTO students (name, age) VALUES (?, ?)
     SQL
 
-    DB[:conn].execute(sql, name, age)
+    DB[:conn].execute(sql, name, grade)
   end
 
   def self.create
