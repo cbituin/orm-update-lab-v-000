@@ -58,7 +58,11 @@ class Student
   end
 
   def update
+    sql = <<-SQL
+      UPDATE songs SET name = ?, album =? WHERE id = ?
+    SQL
 
+    DB[:conn].execute(sql, self.name, self.album, self.id)
   end
 
 end
