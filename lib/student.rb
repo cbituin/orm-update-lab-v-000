@@ -52,11 +52,10 @@ class Student
   end
 
   def self.new_from_db(row)
-    sql = <<-SQL
-        SELECT * FROM students;
-    SQL
-
-    DB[:conn].execute(sql).each {|row| Student.new(id=row[0], row[1], row[2])}
+    new_student = Student.new
+    new_student.id = row[0]
+    new_student.name = row[1]
+    new_student.grade = row[2]
   end
 
   def self.find_by_name
