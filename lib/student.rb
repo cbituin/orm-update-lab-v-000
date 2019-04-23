@@ -34,7 +34,7 @@ class Student
 
   def save
     sql = <<-SQL
-      INSERT INTO students (name, age) VALUES (?, ?)      
+      INSERT INTO students (name, age) VALUES (?, ?)
     SQL
 
     DB[:conn].execute(sql, name, age)
