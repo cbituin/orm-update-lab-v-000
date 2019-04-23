@@ -56,7 +56,7 @@ class Student
         SELECT * FROM students;
     SQL
 
-    DB[:conn].execute(sql).each {|row| Student.new(row[0], row[1], row[2])}
+    DB[:conn].execute(sql).each {|row| Student.new(id=row[0], row[1], row[2])}
   end
 
   def self.find_by_name
