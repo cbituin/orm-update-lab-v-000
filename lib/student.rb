@@ -46,7 +46,9 @@ class Student
   end
 
   def self.create
-
+    new_student = Student.new
+    new_student.save
+    new_student
   end
 
   def self.new_from_db
